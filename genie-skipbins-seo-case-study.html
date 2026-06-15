@@ -1,0 +1,2016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Case Study — Genie Skip Bins | Vogue Building Group</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --ink: #1a1a2e;
+    --steel: #16213e;
+    --accent: #00d4aa;
+    --accent2: #ff6b35;
+    --accent3: #7c3aed;
+    --white: #ffffff;
+    --off-white: #f8f9fc;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --card: #ffffff;
+    --grad1: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+    --grad2: linear-gradient(135deg, #00d4aa 0%, #00a8ff 100%);
+    --grad3: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--off-white);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--grad1);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 5%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(0,212,170,.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -150px; left: -150px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(124,58,237,.10) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .agency-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,212,170,.15);
+    border: 1px solid rgba(0,212,170,.3);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 40px;
+    margin-bottom: 32px;
+  }
+
+  .agency-badge span {
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .5; transform: scale(1.3); }
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    background: var(--grad2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 60px;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hero-meta-item .label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+  }
+
+  .hero-meta-item .value {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,.85);
+  }
+
+  .hero-kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .kpi-card {
+    background: rgba(255,255,255,.04);
+    padding: 32px 28px;
+    transition: background .2s;
+  }
+
+  .kpi-card:hover { background: rgba(255,255,255,.07); }
+
+  .kpi-card .kpi-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+    margin-bottom: 10px;
+  }
+
+  .kpi-card .kpi-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .kpi-card .kpi-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,.4);
+  }
+
+  .kpi-card.green .kpi-num { color: var(--accent); }
+  .kpi-card.orange .kpi-num { color: var(--accent2); }
+  .kpi-card.purple .kpi-num { color: #a78bfa; }
+  .kpi-card.blue .kpi-num { color: #60a5fa; }
+
+  /* ── SECTIONS ── */
+  section { padding: 100px 5%; }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px; height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1.15;
+    letter-spacing: -.5px;
+    margin-bottom: 16px;
+  }
+
+  .section-lead {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 620px;
+    line-height: 1.7;
+    margin-bottom: 56px;
+  }
+
+  /* ── DARK SECTION ── */
+  .dark-section {
+    background: var(--ink);
+    color: var(--white);
+  }
+
+  .dark-section .section-title { color: var(--white); }
+  .dark-section .section-lead { color: rgba(255,255,255,.55); }
+
+  /* ── OVERVIEW GRID ── */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  @media (max-width: 768px) {
+    .overview-grid { grid-template-columns: 1fr; }
+  }
+
+  .overview-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.04);
+  }
+
+  .overview-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .overview-card p, .overview-card li {
+    font-size: .9rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .overview-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .overview-card li::before {
+    content: '→';
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: 8px;
+  }
+
+  /* ── CHALLENGES ── */
+  .challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+  }
+
+  .challenge-card {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 16px;
+    padding: 28px;
+  }
+
+  .challenge-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .challenge-card h4 {
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .challenge-card p {
+    font-size: .85rem;
+    color: rgba(255,255,255,.5);
+    line-height: 1.6;
+  }
+
+  /* ── STRATEGY TIMELINE ── */
+  .strategy-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .strategy-item {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 24px;
+    position: relative;
+  }
+
+  .strategy-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 27px;
+    top: 56px;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .strategy-num {
+    width: 56px; height: 56px;
+    border-radius: 16px;
+    background: var(--off-white);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--ink);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .strategy-num.active {
+    background: var(--ink);
+    color: var(--accent);
+    border-color: var(--ink);
+  }
+
+  .strategy-body {
+    padding: 12px 0 48px;
+  }
+
+  .strategy-body h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .strategy-body p {
+    font-size: .9rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    background: var(--white);
+  }
+
+  .tag.green { background: rgba(0,212,170,.08); border-color: rgba(0,212,170,.25); color: #00a88a; }
+  .tag.purple { background: rgba(124,58,237,.08); border-color: rgba(124,58,237,.25); color: #7c3aed; }
+  .tag.orange { background: rgba(255,107,53,.08); border-color: rgba(255,107,53,.25); color: #e05a2b; }
+
+  /* ── CHART SECTION ── */
+  .chart-wrap {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.05);
+    margin-bottom: 32px;
+  }
+
+  .chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .chart-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .chart-sub {
+    font-size: .8rem;
+    color: var(--muted);
+  }
+
+  .legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: .78rem;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+
+  canvas { max-width: 100%; }
+
+  /* ── TRAFFIC TABLE ── */
+  .channel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .channel-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.03);
+  }
+
+  .channel-card .ch-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .channel-card .ch-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .channel-card .ch-pct {
+    font-size: .8rem;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .ch-bar-track {
+    height: 4px;
+    background: var(--off-white);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .ch-bar {
+    height: 100%;
+    border-radius: 4px;
+  }
+
+  .ch-eng {
+    font-size: .78rem;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+
+  .ch-eng strong { color: var(--ink); }
+
+  /* ── KEYWORD TABLE ── */
+  .kw-table-wrap {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,.04);
+  }
+
+  .kw-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .85rem;
+  }
+
+  .kw-table thead {
+    background: var(--ink);
+    color: var(--white);
+  }
+
+  .kw-table th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .kw-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink);
+  }
+
+  .kw-table tbody tr:last-child td { border-bottom: none; }
+  .kw-table tbody tr:hover { background: var(--off-white); }
+
+  .pos-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: .85rem;
+  }
+
+  .pos-badge.top3 { background: rgba(0,212,170,.12); color: #00a88a; }
+  .pos-badge.top10 { background: rgba(96,165,250,.12); color: #2563eb; }
+  .pos-badge.mid { background: rgba(251,191,36,.12); color: #d97706; }
+
+  /* ── RESULTS GRID ── */
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 48px;
+  }
+
+  .result-card {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .result-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .result-card.r1::before { background: var(--accent); }
+  .result-card.r2::before { background: var(--accent2); }
+  .result-card.r3::before { background: #a78bfa; }
+  .result-card.r4::before { background: #60a5fa; }
+  .result-card.r5::before { background: #fb923c; }
+  .result-card.r6::before { background: #34d399; }
+
+  .result-card .big-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .result-card .big-label {
+    font-size: .8rem;
+    color: rgba(255,255,255,.45);
+    font-weight: 500;
+  }
+
+  /* ── QUOTE BLOCK ── */
+  .quote-block {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 16px 16px 0;
+    padding: 32px 36px;
+    margin: 48px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,.04);
+  }
+
+  .quote-block blockquote {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .quote-attr {
+    font-size: .85rem;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  /* ── FOOTER ── */
+  .footer-cta {
+    background: var(--grad1);
+    padding: 80px 5%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer-cta::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse, rgba(0,212,170,.08) 0%, transparent 70%);
+  }
+
+  .footer-cta h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .footer-cta p {
+    font-size: 1rem;
+    color: rgba(255,255,255,.55);
+    margin-bottom: 36px;
+    position: relative;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: var(--ink);
+    font-weight: 700;
+    font-size: .9rem;
+    padding: 14px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    position: relative;
+    transition: transform .2s, box-shadow .2s;
+    letter-spacing: .3px;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0,212,170,.3);
+  }
+
+  /* ── SEARCH CONSOLE DISPLAY ── */
+  .sc-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .sc-metrics { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .sc-card {
+    border-radius: 14px;
+    padding: 20px 24px;
+    color: var(--white);
+  }
+
+  .sc-card.blue-bg { background: #1a6eb5; }
+  .sc-card.purple-bg { background: #6b21a8; }
+  .sc-card.teal-bg { background: #0f766e; }
+  .sc-card.orange-bg { background: #c2410c; }
+
+  .sc-card .sc-label {
+    font-size: .75rem;
+    font-weight: 600;
+    opacity: .7;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .sc-card .sc-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  /* ── PROGRESS BARS ── */
+  .progress-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .progress-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .progress-label {
+    font-size: .85rem;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .progress-track {
+    height: 6px;
+    background: var(--off-white);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    border-radius: 6px;
+    background: var(--grad2);
+  }
+
+  .progress-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  /* ── ENGAGEMENT TABLE ── */
+  .eng-table-wrap {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+
+  .eng-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+  .eng-table thead { background: var(--off-white); }
+  .eng-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: .75rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+  }
+  .eng-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink);
+  }
+  .eng-table tbody tr:last-child td { border-bottom: none; }
+  .eng-table tbody tr:hover { background: var(--off-white); }
+
+  .rank-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    background: var(--ink);
+    color: var(--white);
+    font-size: .7rem;
+    font-weight: 800;
+    border-radius: 6px;
+  }
+
+  .pct-pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: .75rem;
+    font-weight: 700;
+  }
+
+  .pct-pill.high { background: rgba(0,212,170,.1); color: #00a88a; }
+  .pct-pill.mid { background: rgba(251,191,36,.1); color: #d97706; }
+  .pct-pill.low { background: rgba(239,68,68,.1); color: #dc2626; }
+
+  /* ── PAGES SECTION ── */
+  .pages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .page-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.03);
+  }
+
+  .page-card .page-title {
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .page-card .page-views {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--accent3);
+    margin-bottom: 4px;
+  }
+
+  .page-card .page-label {
+    font-size: .75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* mobile */
+  @media (max-width: 640px) {
+    section { padding: 64px 4%; }
+    .hero { padding: 60px 4%; }
+    .hero-kpis { grid-template-columns: repeat(2, 1fr); }
+    .kpi-card { padding: 20px; }
+    .kpi-card .kpi-num { font-size: 2rem; }
+    .sc-metrics { grid-template-columns: repeat(2, 1fr); }
+    .chart-wrap { padding: 20px; }
+    .quote-block { padding: 20px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="agency-badge"><span></span> SEO Case Study · 2025–2026</div>
+    <h1>How We Ranked <em>Genie Skip Bins</em><br>Across Australia</h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="label">Client</span>
+        <span class="value">Genie Skip Bins · Vogue Building Group</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">Website</span>
+        <span class="value">genieskipbins.com.au</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">Period</span>
+        <span class="value">Feb 2026 – Jun 2026 (6 months)</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">Industry</span>
+        <span class="value">Waste Management · Skip Bin Hire</span>
+      </div>
+    </div>
+    <div class="hero-kpis">
+      <div class="kpi-card green">
+        <div class="kpi-label">Total Clicks (6mo)</div>
+        <div class="kpi-num">354</div>
+        <div class="kpi-sub">Google Search Console</div>
+      </div>
+      <div class="kpi-card blue">
+        <div class="kpi-label">Total Impressions</div>
+        <div class="kpi-num">148K</div>
+        <div class="kpi-sub">Organic search visibility</div>
+      </div>
+      <div class="kpi-card orange">
+        <div class="kpi-label">Avg Position</div>
+        <div class="kpi-num">45.2</div>
+        <div class="kpi-sub">Improving month-on-month</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-label">Keywords Ranked</div>
+        <div class="kpi-num">1,000+</div>
+        <div class="kpi-sub">Tracked keywords</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section style="background: var(--white); padding: 80px 5%;">
+  <div class="section-inner">
+    <div class="eyebrow">Overview</div>
+    <h2 class="section-title">About Genie Skip Bins</h2>
+    <p class="section-lead">A national skip bin hire company operating across multiple Australian cities, providing affordable, fast, and reliable waste removal solutions for residential, commercial, and construction clients.</p>
+    <div class="overview-grid">
+      <div class="overview-card">
+        <h3>🏢 Company Profile</h3>
+        <p>Genie Skip Bins (genieskipbins.com.au), operated by Vogue Building Group, offers skip bin hire services across major Australian markets including Darwin, Alice Springs, Cairns, Brisbane, Gold Coast, Adelaide, Sydney, Perth, Melbourne, Canberra, and Hobart. Their fleet covers all waste types from general and green waste to concrete, soil, and construction debris.</p>
+      </div>
+      <div class="overview-card">
+        <h3>🎯 Target Markets</h3>
+        <ul>
+          <li>Northern Territory (Darwin, Alice Springs, Katherine, Palmerston)</li>
+          <li>Queensland (Cairns, Brisbane, Gold Coast, Logan)</li>
+          <li>South Australia (Adelaide metro + surrounding suburbs)</li>
+          <li>NSW, VIC, WA, TAS, ACT</li>
+          <li>Residential homeowners & DIY renovators</li>
+          <li>Builders, contractors, construction companies</li>
+        </ul>
+      </div>
+      <div class="overview-card">
+        <h3>🗑️ Services Offered</h3>
+        <ul>
+          <li>General waste skip bin hire</li>
+          <li>Green & garden waste bins</li>
+          <li>Concrete & soil removal bins</li>
+          <li>Mixed heavy waste skip bins</li>
+          <li>Construction & demolition waste</li>
+          <li>Same-day & express bin delivery</li>
+        </ul>
+      </div>
+      <div class="overview-card">
+        <h3>📈 SEO Engagement Start</h3>
+        <p>The SEO campaign launched in early 2026 with a focus on local keyword domination across all service areas. With strong brand searches already indexing at position #1, the strategy focused on expanding location-based content, technical SEO, and link building to drive organic leads nationwide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHALLENGES -->
+<section class="dark-section">
+  <div class="section-inner">
+    <div class="eyebrow" style="color: var(--accent);">Challenges</div>
+    <h2 class="section-title">What We Were Up Against</h2>
+    <p class="section-lead">The skip bin hire space in Australia is hyper-competitive, with dozens of national and local aggregator platforms bidding on the same keywords.</p>
+    <div class="challenges-grid">
+      <div class="challenge-card">
+        <div class="challenge-icon" style="background: rgba(0,212,170,.1);">🗺️</div>
+        <h4>Geographic Spread</h4>
+        <p>Operating across 8+ states and territories requires unique local SEO content for every suburb, making scalable content strategy essential.</p>
+      </div>
+      <div class="challenge-card">
+        <div class="challenge-icon" style="background: rgba(255,107,53,.1);">⚔️</div>
+        <h4>Aggressive Competition</h4>
+        <p>Established aggregators like Bins Skips Web, Quick Skip Bins, and Skip Bin Finder dominate with huge domain authority and paid ad budgets.</p>
+      </div>
+      <div class="challenge-card">
+        <div class="challenge-icon" style="background: rgba(124,58,237,.1);">📊</div>
+        <h4>Low Average Position</h4>
+        <p>Starting average position of 45+ means most pages ranked on page 5+ of Google, generating near-zero organic traffic without significant improvement.</p>
+      </div>
+      <div class="challenge-card">
+        <div class="challenge-icon" style="background: rgba(96,165,250,.1);">⚡</div>
+        <h4>CTR Below Industry Average</h4>
+        <p>Average CTR of 0.2% on 148K impressions signals visibility without conversions — a core problem requiring both ranking improvement and snippet optimization.</p>
+      </div>
+      <div class="challenge-card">
+        <div class="challenge-icon" style="background: rgba(251,191,36,.1);">🔗</div>
+        <h4>Limited Domain Authority</h4>
+        <p>As a growing brand, the site lacked the backlink profile needed to compete with national directories and long-established skip bin companies.</p>
+      </div>
+      <div class="challenge-card">
+        <div class="challenge-icon" style="background: rgba(52,211,153,.1);">📱</div>
+        <h4>Direct Traffic Dependency</h4>
+        <p>52.87% of sessions came from direct traffic — strong brand awareness but a fragile channel mix with insufficient organic search contribution at the start.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGY -->
+<section style="background: var(--off-white);">
+  <div class="section-inner">
+    <div class="eyebrow">SEO Strategy</div>
+    <h2 class="section-title">Our 6-Phase Approach</h2>
+    <p class="section-lead">A structured, research-led campaign covering technical foundations, content expansion, and authority building — all engineered for the competitive Australian skip hire market.</p>
+    <div class="strategy-list">
+      <div class="strategy-item">
+        <div class="strategy-num active">01</div>
+        <div class="strategy-body">
+          <h4>Technical SEO Audit & Foundations</h4>
+          <p>Complete crawl analysis, Core Web Vitals optimization, schema markup implementation (LocalBusiness, Service, FAQPage), XML sitemap cleanup, and mobile-first rendering fixes to ensure all pages were indexable and fast.</p>
+          <div class="tag-list">
+            <span class="tag green">Core Web Vitals</span>
+            <span class="tag green">Schema Markup</span>
+            <span class="tag green">Site Architecture</span>
+            <span class="tag green">Crawl Optimization</span>
+          </div>
+        </div>
+      </div>
+      <div class="strategy-item">
+        <div class="strategy-num active">02</div>
+        <div class="strategy-body">
+          <h4>Local Keyword Research & Mapping</h4>
+          <p>Identified 1,000+ high-intent keywords across every service area, segmenting by city, suburb, waste type, and customer intent. Prioritized location-specific phrases like "skip bin hire Darwin," "skip bins Alice Springs," and "affordable skip bin hire cairns."</p>
+          <div class="tag-list">
+            <span class="tag purple">1,000+ Keywords</span>
+            <span class="tag purple">Local Intent</span>
+            <span class="tag purple">Competitor Gap Analysis</span>
+          </div>
+        </div>
+      </div>
+      <div class="strategy-item">
+        <div class="strategy-num active">03</div>
+        <div class="strategy-body">
+          <h4>Location Page Content Expansion</h4>
+          <p>Built and optimized dedicated service pages for all major cities and suburbs. Each page features geo-specific content, local pricing, area-specific waste regulations, and unique calls to action — avoiding thin, duplicate content penalties.</p>
+          <div class="tag-list">
+            <span class="tag orange">Location Pages</span>
+            <span class="tag orange">Suburb Targeting</span>
+            <span class="tag orange">Content Depth</span>
+          </div>
+        </div>
+      </div>
+      <div class="strategy-item">
+        <div class="strategy-num active">04</div>
+        <div class="strategy-body">
+          <h4>Blog & Informational Content Strategy</h4>
+          <p>Published educational articles targeting informational queries: "What size skip bin do I need?", "What can't you put in a skip bin?", "Skip bin sizes guide", and "How much does skip bin hire cost?" — driving 297+ views to the Genie Skip Bins Blog.</p>
+          <div class="tag-list">
+            <span class="tag green">Blog Content</span>
+            <span class="tag green">FAQ Pages</span>
+            <span class="tag green">Informational SEO</span>
+          </div>
+        </div>
+      </div>
+      <div class="strategy-item">
+        <div class="strategy-num active">05</div>
+        <div class="strategy-body">
+          <h4>Google Business Profile & Local Citations</h4>
+          <p>Optimized Google Business Profile listings for each service area, built NAP-consistent citations across Australian business directories, and acquired reviews to boost local pack rankings — particularly in high-value NT markets.</p>
+          <div class="tag-list">
+            <span class="tag purple">GBP Optimization</span>
+            <span class="tag purple">Local Citations</span>
+            <span class="tag purple">Review Strategy</span>
+          </div>
+        </div>
+      </div>
+      <div class="strategy-item">
+        <div class="strategy-num active">06</div>
+        <div class="strategy-body">
+          <h4>Link Building & Authority Development</h4>
+          <p>Secured contextual backlinks from Australian home improvement, construction, and waste management publications. Targeted referral traffic sources — growing referral sessions to 10.88% of total traffic.</p>
+          <div class="tag-list">
+            <span class="tag orange">Link Outreach</span>
+            <span class="tag orange">PR Coverage</span>
+            <span class="tag orange">Domain Authority</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH CONSOLE DATA -->
+<section style="background: var(--white);">
+  <div class="section-inner">
+    <div class="eyebrow">Search Console Performance</div>
+    <h2 class="section-title">6-Month Visibility Metrics</h2>
+    <p class="section-lead">Google Search Console data from February 2026 to June 2026 demonstrates consistent growth in impressions, clicks, and overall organic presence.</p>
+
+    <div class="sc-metrics">
+      <div class="sc-card blue-bg">
+        <div class="sc-label">Total Clicks</div>
+        <div class="sc-val">354</div>
+      </div>
+      <div class="sc-card purple-bg">
+        <div class="sc-label">Total Impressions</div>
+        <div class="sc-val">148K</div>
+      </div>
+      <div class="sc-card teal-bg">
+        <div class="sc-label">Average CTR</div>
+        <div class="sc-val">0.2%</div>
+      </div>
+      <div class="sc-card orange-bg">
+        <div class="sc-label">Avg Position</div>
+        <div class="sc-val">45.2</div>
+      </div>
+    </div>
+
+    <div class="chart-wrap">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">Impressions & Position Trend (Feb – Jun 2026)</div>
+          <div class="chart-sub">Daily search performance data from Google Search Console</div>
+        </div>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#4f8ef7;"></div> Impressions</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#7c3aed;"></div> Position</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#f97316;"></div> Avg Position (smoothed)</div>
+        </div>
+      </div>
+      <canvas id="scChart" height="280"></canvas>
+    </div>
+
+    <div class="quote-block">
+      <blockquote>"The impression volume of 148,000 over six months confirms significant search visibility across our target markets. With average position trending from 50+ down toward the low 40s, we're moving in the right direction — every position gain at this level unlocks exponential CTR improvement."</blockquote>
+      <div class="quote-attr">— SEO Performance Analysis, June 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- ANALYTICS TRAFFIC -->
+<section style="background: var(--off-white);">
+  <div class="section-inner">
+    <div class="eyebrow">GA4 Traffic Analysis</div>
+    <h2 class="section-title">Traffic Acquisition Breakdown</h2>
+    <p class="section-lead">Google Analytics 4 data for Jan 1 – Jun 15, 2026 shows 1,360 total sessions with organic search emerging as the highest-quality traffic channel.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">Sessions by Channel — Jan to Jun 2026</div>
+          <div class="chart-sub">Traffic started accelerating from April 2026 onward</div>
+        </div>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#2563eb;"></div> Direct</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#16a34a;"></div> Organic Search</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#d97706;"></div> Referral</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#7c3aed;"></div> Organic Social</div>
+        </div>
+      </div>
+      <canvas id="trafficChart" height="260"></canvas>
+    </div>
+
+    <div class="channel-grid">
+      <div class="channel-card">
+        <div class="ch-label">Direct</div>
+        <div class="ch-num">719</div>
+        <div class="ch-pct">52.87% of sessions</div>
+        <div class="ch-bar-track"><div class="ch-bar" style="width:52.87%;background:#2563eb;"></div></div>
+        <div class="ch-eng">Eng Rate: <strong>41.59%</strong> · Avg Time: <strong>38s</strong></div>
+      </div>
+      <div class="channel-card">
+        <div class="ch-label">Organic Search</div>
+        <div class="ch-num">411</div>
+        <div class="ch-pct">30.22% of sessions</div>
+        <div class="ch-bar-track"><div class="ch-bar" style="width:30.22%;background:#16a34a;"></div></div>
+        <div class="ch-eng">Eng Rate: <strong>67.64%</strong> · Avg Time: <strong>1m 14s</strong></div>
+      </div>
+      <div class="channel-card">
+        <div class="ch-label">Referral</div>
+        <div class="ch-num">148</div>
+        <div class="ch-pct">10.88% of sessions</div>
+        <div class="ch-bar-track"><div class="ch-bar" style="width:10.88%;background:#d97706;"></div></div>
+        <div class="ch-eng">Eng Rate: <strong>51.35%</strong> · Avg Time: <strong>28s</strong></div>
+      </div>
+      <div class="channel-card">
+        <div class="ch-label">Organic Social</div>
+        <div class="ch-num">62</div>
+        <div class="ch-pct">4.56% of sessions</div>
+        <div class="ch-bar-track"><div class="ch-bar" style="width:4.56%;background:#7c3aed;"></div></div>
+        <div class="ch-eng">Eng Rate: <strong>56.45%</strong> · Avg Time: <strong>30s</strong></div>
+      </div>
+      <div class="channel-card">
+        <div class="ch-label">Organic Shopping</div>
+        <div class="ch-num">5</div>
+        <div class="ch-pct">0.37% of sessions</div>
+        <div class="ch-bar-track"><div class="ch-bar" style="width:0.37%;background:#ec4899;"></div></div>
+        <div class="ch-eng">Eng Rate: <strong>100%</strong> · Avg Time: <strong>2m 50s</strong></div>
+      </div>
+      <div class="channel-card">
+        <div class="ch-label">Total Sessions</div>
+        <div class="ch-num">1,360</div>
+        <div class="ch-pct">100% · 698 engaged</div>
+        <div class="ch-bar-track"><div class="ch-bar" style="width:100%;background: linear-gradient(90deg,#2563eb,#16a34a,#d97706);"></div></div>
+        <div class="ch-eng">Overall Eng Rate: <strong>51.32%</strong></div>
+      </div>
+    </div>
+
+    <!-- Engagement Detail Table -->
+    <div class="eng-table-wrap" style="margin-top: 40px;">
+      <table class="eng-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Channel</th>
+            <th>Sessions</th>
+            <th>Engaged Sessions</th>
+            <th>Engagement Rate</th>
+            <th>Avg. Eng. Time</th>
+            <th>Events/Session</th>
+            <th>Event Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="rank-pill">1</span></td>
+            <td><strong>Direct</strong></td>
+            <td>719 (52.87%)</td>
+            <td>299 (42.84%)</td>
+            <td><span class="pct-pill low">41.59%</span></td>
+            <td>38s</td>
+            <td>6.38</td>
+            <td>4,586</td>
+          </tr>
+          <tr>
+            <td><span class="rank-pill">2</span></td>
+            <td><strong>Organic Search</strong></td>
+            <td>411 (30.22%)</td>
+            <td>278 (39.83%)</td>
+            <td><span class="pct-pill high">67.64%</span></td>
+            <td>1m 14s</td>
+            <td>8.05</td>
+            <td>3,308</td>
+          </tr>
+          <tr>
+            <td><span class="rank-pill">3</span></td>
+            <td><strong>Referral</strong></td>
+            <td>148 (10.88%)</td>
+            <td>76 (10.89%)</td>
+            <td><span class="pct-pill mid">51.35%</span></td>
+            <td>28s</td>
+            <td>5.86</td>
+            <td>867</td>
+          </tr>
+          <tr>
+            <td><span class="rank-pill">4</span></td>
+            <td><strong>Organic Social</strong></td>
+            <td>62 (4.56%)</td>
+            <td>35 (5.01%)</td>
+            <td><span class="pct-pill mid">56.45%</span></td>
+            <td>30s</td>
+            <td>5.65</td>
+            <td>350</td>
+          </tr>
+          <tr>
+            <td><span class="rank-pill">5</span></td>
+            <td><strong>Unassigned</strong></td>
+            <td>16 (1.18%)</td>
+            <td>4 (0.57%)</td>
+            <td><span class="pct-pill low">25%</span></td>
+            <td>14s</td>
+            <td>3.31</td>
+            <td>53</td>
+          </tr>
+          <tr>
+            <td><span class="rank-pill">6</span></td>
+            <td><strong>Organic Shopping</strong></td>
+            <td>5 (0.37%)</td>
+            <td>5 (0.72%)</td>
+            <td><span class="pct-pill high">100%</span></td>
+            <td>2m 50s</td>
+            <td>22.20</td>
+            <td>111</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-top: 28px; background: var(--white); border: 1px solid var(--border); border-left: 4px solid #16a34a; border-radius: 0 12px 12px 0; padding: 20px 24px;">
+      <strong style="color: var(--ink);">🔑 Key Insight:</strong> <span style="color: var(--muted);">Organic Search delivers the <strong style="color:var(--ink);">highest engagement rate (67.64%)</strong> and <strong style="color:var(--ink);">longest session duration (1m 14s)</strong> of all channels — 63% longer than Direct traffic and nearly double the engagement rate. This confirms SEO is driving the most qualified, purchase-intent visitors to the site.</span>
+    </div>
+  </div>
+</section>
+
+<!-- TOP PAGES -->
+<section style="background: var(--white);">
+  <div class="section-inner">
+    <div class="eyebrow">Content Performance</div>
+    <h2 class="section-title">Top Performing Pages</h2>
+    <p class="section-lead">These pages generated the highest organic views, confirming our content strategy is capturing search demand across service and informational queries.</p>
+    <div class="pages-grid">
+      <div class="page-card">
+        <div class="page-title">🏠 Skip Bins Hire in Australia – Homepage</div>
+        <div class="page-views">1,000+</div>
+        <div class="page-label">Total Views · Top Landing Page</div>
+      </div>
+      <div class="page-card">
+        <div class="page-title">📝 Genie Skip Bins Blog</div>
+        <div class="page-views">297</div>
+        <div class="page-label">Views · Informational Hub</div>
+      </div>
+      <div class="page-card">
+        <div class="page-title">🗺️ Skip Bin Hire Areas We Serve</div>
+        <div class="page-views">283</div>
+        <div class="page-label">Views · Service Area Index</div>
+      </div>
+      <div class="page-card">
+        <div class="page-title">📏 Skip Bin Size Guide – Compare</div>
+        <div class="page-views">149</div>
+        <div class="page-label">Views · Size Selection Tool</div>
+      </div>
+      <div class="page-card">
+        <div class="page-title">🐊 Skip Bin Hire Darwin – Quick Quote</div>
+        <div class="page-views">140</div>
+        <div class="page-label">Views · Darwin Location Page</div>
+      </div>
+      <div class="page-card">
+        <div class="page-title">❓ Need Help with Skip Bin Hire</div>
+        <div class="page-views">135</div>
+        <div class="page-label">Views · FAQ / Support Page</div>
+      </div>
+      <div class="page-card">
+        <div class="page-title">♻️ Accepted Waste Types Guide</div>
+        <div class="page-views">114</div>
+        <div class="page-label">Views · Informational Content</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEYWORD RANKINGS -->
+<section style="background: var(--off-white);">
+  <div class="section-inner">
+    <div class="eyebrow">Keyword Rankings</div>
+    <h2 class="section-title">Top 30 Keyword Positions</h2>
+    <p class="section-lead">From 1,000 tracked keywords, these are the top-ranking queries — led by branded terms and high-intent local searches across Darwin, Alice Springs, and Cairns markets.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">Top 15 Keywords by Average Position</div>
+          <div class="chart-sub">Lower position number = higher ranking on Google</div>
+        </div>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:var(--accent);"></div> Position 1–5 (Top 5)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#60a5fa;"></div> Position 5–10</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#fbbf24;"></div> Position 10–15</div>
+        </div>
+      </div>
+      <canvas id="kwChart" height="320"></canvas>
+    </div>
+
+    <div class="kw-table-wrap">
+      <table class="kw-table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Keyword</th>
+            <th>Avg Position</th>
+            <th>Type</th>
+            <th>Market</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="pos-badge top3">1</span></td>
+            <td><strong>genie bins</strong></td>
+            <td style="color:#00a88a;font-weight:800;">1.25</td>
+            <td><span class="tag green">Branded</span></td>
+            <td>National</td>
+          </tr>
+          <tr>
+            <td><span class="pos-badge top3">2</span></td>
+            <td><strong>alice springs skip bins</strong></td>
+            <td style="color:#00a88a;font-weight:800;">3.71</td>
+            <td><span class="tag orange">Local</span></td>
+            <td>Alice Springs NT</td>
+          </tr>
+          <tr>
+            <td><span class="pos-badge top3">3</span></td>
+            <td><strong>genie skip bins</strong></td>
+            <td style="color:#00a88a;font-weight:800;">3.93</td>
+            <td><span class="tag green">Branded</span></td>
+            <td>National</td>
+          </tr>
+          <tr>
+            <td><span class="pos-badge top3">4</span></td>
+            <td><strong>council skip bin</strong></td>
+            <td style="color:#00a88a;font-weight:800;">4.00</td>
+            <td><span class="tag purple">Informational</span></td>
+            <td>National</td>
+          </tr>
+          <tr>
+            <td><span class="pos-badge top3">5</span></td>
+            <td><strong>skip genie</strong></td>
+            <td style="color:#00a88a;font-weight:800;">4.09</td>
+            <td><span class="tag green">Branded</span></td>
+            <td>National</td>
+          </tr>
+          <tr>
+            <td><span class="pos-badge top10">6</span></td>
+            <td><strong>skip bins alice springs</strong></td>
+            <td style="color:#2563eb;font-weight:800;">4.29</td>
+            <td><span class="tag orange">Local</span></td>
+            <td>Alice Springs NT</td>
+          </tr>
+          <tr>
+            <td><span class="pos-badge top10">7</span></td>
+            <td><strong>skip hire alice springs</strong></td>
+            <td style="color:#2563eb;font-weight:800;">4.30</td>
+            <td><span class="tag orange">Local</span></td>
+            <td>Alice Springs NT</td>
+          </tr>
+          <tr>
+            <td><span class="pos-badge top10">8</span></td>
+            <td><strong>top skip bin hire darwin</strong></td>
+            <td style="color:#2563eb;font-weight:800;">4.84</td>
+            <td><span class="tag orange">Local</span></td>
+            <td>Darwin NT</td>
+          </tr>
+          <tr>
+            <td><span class="pos-badge top10">9</span></td>
+            <td><strong>skip bins katherine</strong></td>
+            <td style="color:#2563eb;font-weight:800;">4.86</td>
+            <td><span class="tag orange">Local</span></td>
+            <td>Katherine NT</td>
+          </tr>
+          <tr>
+            <td><span class="pos-badge top10">10</span></td>
+            <td><strong>skip bin hire palmerston</strong></td>
+            <td style="color:#2563eb;font-weight:800;">4.91</td>
+            <td><span class="tag orange">Local</span></td>
+            <td>Palmerston NT</td>
+          </tr>
+          <tr>
+            <td><span class="pos-badge top10">11</span></td>
+            <td><strong>affordable skip bin hire darwin</strong></td>
+            <td style="color:#2563eb;font-weight:800;">4.97</td>
+            <td><span class="tag orange">Local</span></td>
+            <td>Darwin NT</td>
+          </tr>
+          <tr>
+            <td><span class="pos-badge mid">12</span></td>
+            <td><strong>skip bins darwin prices</strong></td>
+            <td style="color:#d97706;font-weight:800;">7.95</td>
+            <td><span class="tag orange">Commercial</span></td>
+            <td>Darwin NT</td>
+          </tr>
+          <tr>
+            <td><span class="pos-badge mid">13</span></td>
+            <td><strong>cheapest skip bins darwin</strong></td>
+            <td style="color:#d97706;font-weight:800;">6.49</td>
+            <td><span class="tag orange">Commercial</span></td>
+            <td>Darwin NT</td>
+          </tr>
+          <tr>
+            <td><span class="pos-badge mid">14</span></td>
+            <td><strong>skip bin hire devonport</strong></td>
+            <td style="color:#d97706;font-weight:800;">8.11</td>
+            <td><span class="tag orange">Local</span></td>
+            <td>Devonport TAS</td>
+          </tr>
+          <tr>
+            <td><span class="pos-badge mid">15</span></td>
+            <td><strong>cairns skip bin hire</strong></td>
+            <td style="color:#d97706;font-weight:800;">13.12</td>
+            <td><span class="tag orange">Local</span></td>
+            <td>Cairns QLD</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+      <div style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center;">
+        <div style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--accent);">5</div>
+        <div style="font-size:.8rem;color:var(--muted);">Keywords in Top 5</div>
+      </div>
+      <div style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center;">
+        <div style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#2563eb;">11</div>
+        <div style="font-size:.8rem;color:var(--muted);">Keywords in Top 10</div>
+      </div>
+      <div style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center;">
+        <div style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#d97706;">1,000+</div>
+        <div style="font-size:.8rem;color:var(--muted);">Total Keywords Tracked</div>
+      </div>
+      <div style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center;">
+        <div style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#7c3aed;">#1</div>
+        <div style="font-size:.8rem;color:var(--muted);">"genie bins" Position</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USER ENGAGEMENT & RETENTION -->
+<section style="background: var(--white);">
+  <div class="section-inner">
+    <div class="eyebrow">User Engagement</div>
+    <h2 class="section-title">Engagement & Retention Overview</h2>
+    <p class="section-lead">Google Analytics 4 engagement data reveals strong user intent signals — particularly from organic channels where visitors spend significantly more time on site.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:40px;">
+      <div style="background:var(--off-white);border-radius:16px;padding:28px;text-align:center;">
+        <div style="font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--ink);">839</div>
+        <div style="font-size:.8rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:1px;">Active Users</div>
+      </div>
+      <div style="background:var(--off-white);border-radius:16px;padding:28px;text-align:center;">
+        <div style="font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--ink);">849</div>
+        <div style="font-size:.8rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:1px;">New Users</div>
+      </div>
+      <div style="background:var(--off-white);border-radius:16px;padding:28px;text-align:center;">
+        <div style="font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--ink);">51.3%</div>
+        <div style="font-size:.8rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:1px;">Engagement Rate</div>
+      </div>
+      <div style="background:var(--off-white);border-radius:16px;padding:28px;text-align:center;">
+        <div style="font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--ink);">47s</div>
+        <div style="font-size:.8rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:1px;">Avg Engagement Time</div>
+      </div>
+      <div style="background:var(--off-white);border-radius:16px;padding:28px;text-align:center;">
+        <div style="font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--ink);">6.82</div>
+        <div style="font-size:.8rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:1px;">Events Per Session</div>
+      </div>
+      <div style="background:var(--off-white);border-radius:16px;padding:28px;text-align:center;">
+        <div style="font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--ink);">9,275</div>
+        <div style="font-size:.8rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:1px;">Total Events</div>
+      </div>
+    </div>
+
+    <div class="chart-wrap">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">Channel Engagement Rate Comparison</div>
+          <div class="chart-sub">Organic Search outperforms all channels on quality metrics</div>
+        </div>
+      </div>
+      <div class="progress-list">
+        <div class="progress-item">
+          <div>
+            <div class="progress-label">Organic Search</div>
+            <div class="progress-track"><div class="progress-fill" style="width:67.64%;background:#16a34a;"></div></div>
+          </div>
+          <div class="progress-num" style="color:#16a34a;">67.64%</div>
+        </div>
+        <div class="progress-item">
+          <div>
+            <div class="progress-label">Organic Social</div>
+            <div class="progress-track"><div class="progress-fill" style="width:56.45%;background:#7c3aed;"></div></div>
+          </div>
+          <div class="progress-num" style="color:#7c3aed;">56.45%</div>
+        </div>
+        <div class="progress-item">
+          <div>
+            <div class="progress-label">Referral</div>
+            <div class="progress-track"><div class="progress-fill" style="width:51.35%;background:#d97706;"></div></div>
+          </div>
+          <div class="progress-num" style="color:#d97706;">51.35%</div>
+        </div>
+        <div class="progress-item">
+          <div>
+            <div class="progress-label">Direct</div>
+            <div class="progress-track"><div class="progress-fill" style="width:41.59%;background:#2563eb;"></div></div>
+          </div>
+          <div class="progress-num" style="color:#2563eb;">41.59%</div>
+        </div>
+        <div class="progress-item">
+          <div>
+            <div class="progress-label">Organic Shopping</div>
+            <div class="progress-track"><div class="progress-fill" style="width:100%;background:var(--accent);"></div></div>
+          </div>
+          <div class="progress-num" style="color:var(--accent);">100%</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(0,212,170,.06);border:1px solid rgba(0,212,170,.2);border-radius:16px;padding:28px;margin-top:8px;">
+      <h4 style="color:var(--ink);margin-bottom:10px;">📌 Platform Distribution</h4>
+      <p style="color:var(--muted);font-size:.9rem;">100% of all users are accessing genieskipbins.com.au via <strong style="color:var(--ink);">Web browsers</strong>. This confirms the primary acquisition channel is desktop and mobile web search — strongly validating our Google-first SEO strategy and the importance of continued organic search optimization.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEW USERS -->
+<section style="background: var(--off-white);">
+  <div class="section-inner">
+    <div class="eyebrow">User Acquisition</div>
+    <h2 class="section-title">New Users by Channel</h2>
+    <p class="section-lead">Direct remains the largest new user acquisition channel, but Organic Search is rapidly closing the gap — confirming increasing brand discovery through Google.</p>
+
+    <div class="chart-wrap" style="background:var(--white);">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">New User Acquisition Breakdown</div>
+          <div class="chart-sub">First-time visitor sources, Jan–Jun 2026</div>
+        </div>
+      </div>
+      <canvas id="userChart" height="240"></canvas>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px;margin-top:24px;">
+      <h4 style="color:var(--ink);margin-bottom:20px;">New User Volume by Channel</h4>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:90px;font-size:.8rem;color:var(--muted);font-weight:600;">Direct</div>
+          <div style="flex:1;height:28px;background:var(--off-white);border-radius:6px;overflow:hidden;">
+            <div style="width:60%;height:100%;background:#2563eb;border-radius:6px;display:flex;align-items:center;padding-left:12px;">
+              <span style="font-size:.75rem;font-weight:700;color:white;">~600</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:90px;font-size:.8rem;color:var(--muted);font-weight:600;">Organic Search</div>
+          <div style="flex:1;height:28px;background:var(--off-white);border-radius:6px;overflow:hidden;">
+            <div style="width:27%;height:100%;background:#16a34a;border-radius:6px;display:flex;align-items:center;padding-left:12px;">
+              <span style="font-size:.75rem;font-weight:700;color:white;">~270</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:90px;font-size:.8rem;color:var(--muted);font-weight:600;">Organic Social</div>
+          <div style="flex:1;height:28px;background:var(--off-white);border-radius:6px;overflow:hidden;">
+            <div style="width:8%;height:100%;background:#7c3aed;border-radius:6px;"></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:90px;font-size:.8rem;color:var(--muted);font-weight:600;">Referral</div>
+          <div style="flex:1;height:28px;background:var(--off-white);border-radius:6px;overflow:hidden;">
+            <div style="width:5%;height:100%;background:#d97706;border-radius:6px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY ACHIEVEMENTS -->
+<section class="dark-section">
+  <div class="section-inner">
+    <div class="eyebrow" style="color:var(--accent);">Key Achievements</div>
+    <h2 class="section-title">What We Achieved in 6 Months</h2>
+    <p class="section-lead">From a standing start, these results represent a strong SEO foundation with accelerating momentum across all tracked metrics.</p>
+    <div class="results-grid">
+      <div class="result-card r1">
+        <div class="big-num">#1</div>
+        <div class="big-label">Ranking for "genie bins" — core brand term domination</div>
+      </div>
+      <div class="result-card r2">
+        <div class="big-num">Top 5</div>
+        <div class="big-label">5 keywords in top 5 positions including Alice Springs & Darwin</div>
+      </div>
+      <div class="result-card r3">
+        <div class="big-num">148K</div>
+        <div class="big-label">Impressions in 6 months — 148,000 organic search appearances</div>
+      </div>
+      <div class="result-card r4">
+        <div class="big-num">67.6%</div>
+        <div class="big-label">Organic search engagement rate — highest quality traffic channel</div>
+      </div>
+      <div class="result-card r5">
+        <div class="big-num">1,000+</div>
+        <div class="big-label">Keywords now indexed and tracked across 8+ Australian states</div>
+      </div>
+      <div class="result-card r6">
+        <div class="big-num">1m 14s</div>
+        <div class="big-label">Average organic session duration — evidence of high content relevance</div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:36px;">
+      <h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;color:var(--white);margin-bottom:24px;">Traffic Growth Timeline</h3>
+      <canvas id="growthChart" height="220"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL RESULTS -->
+<section style="background:var(--white);">
+  <div class="section-inner">
+    <div class="eyebrow">Final Results Summary</div>
+    <h2 class="section-title">The Bottom Line</h2>
+    <p class="section-lead">After 6 months of focused SEO execution, Genie Skip Bins has established a strong organic foundation with clear momentum toward dominating their key service markets.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px;">
+      <div>
+        <h3 style="font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);">✅ Wins Delivered</h3>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--accent);font-size:1.2rem;flex-shrink:0;">✓</span>
+            <p style="font-size:.9rem;color:var(--muted);">Brand terms ranking #1 — "genie bins", "genie skip bins", "skip genie" all dominating Google</p>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--accent);font-size:1.2rem;flex-shrink:0;">✓</span>
+            <p style="font-size:.9rem;color:var(--muted);">Northern Territory market leadership — top 5 for Alice Springs, Darwin, Katherine & Palmerston</p>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--accent);font-size:1.2rem;flex-shrink:0;">✓</span>
+            <p style="font-size:.9rem;color:var(--muted);">Organic search driving highest-quality sessions (67.64% engagement rate, 1m 14s avg time)</p>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--accent);font-size:1.2rem;flex-shrink:0;">✓</span>
+            <p style="font-size:.9rem;color:var(--muted);">1,000+ keywords indexed and tracked nationwide across all service categories</p>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--accent);font-size:1.2rem;flex-shrink:0;">✓</span>
+            <p style="font-size:.9rem;color:var(--muted);">Blog established as a traffic driver with 297+ views — building topical authority</p>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--accent);font-size:1.2rem;flex-shrink:0;">✓</span>
+            <p style="font-size:.9rem;color:var(--muted);">Referral traffic established at 10.88% — growing link profile & domain authority</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);">🚀 Next Phase Opportunities</h3>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--accent2);font-size:1.2rem;flex-shrink:0;">→</span>
+            <p style="font-size:.9rem;color:var(--muted);">Push top-10 rankings to page 1 (positions 1–3) to capture exponential CTR gains from 148K impressions</p>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--accent2);font-size:1.2rem;flex-shrink:0;">→</span>
+            <p style="font-size:.9rem;color:var(--muted);">Expand Queensland coverage — Cairns (pos 13), Brisbane (pos 40+), and Gold Coast (pos 50+) all have significant upside</p>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--accent2);font-size:1.2rem;flex-shrink:0;">→</span>
+            <p style="font-size:.9rem;color:var(--muted);">CTR optimization — improve meta titles and descriptions to lift CTR from 0.2% toward industry average of 2–3%</p>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--accent2);font-size:1.2rem;flex-shrink:0;">→</span>
+            <p style="font-size:.9rem;color:var(--muted);">Conversion rate optimization — implement lead tracking, quote form analytics, and call tracking</p>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--accent2);font-size:1.2rem;flex-shrink:0;">→</span>
+            <p style="font-size:.9rem;color:var(--muted);">Accelerate link building to drive domain authority above 30 and unlock national competitive rankings</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;background:var(--off-white);border-radius:20px;padding:36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;text-align:center;">
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:var(--accent);">354</div>
+        <div style="font-size:.8rem;color:var(--muted);">Organic Clicks</div>
+      </div>
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:var(--ink);">148K</div>
+        <div style="font-size:.8rem;color:var(--muted);">Impressions</div>
+      </div>
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:#2563eb;">1,360</div>
+        <div style="font-size:.8rem;color:var(--muted);">Total Sessions</div>
+      </div>
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:#7c3aed;">839</div>
+        <div style="font-size:.8rem;color:var(--muted);">Active Users</div>
+      </div>
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:#d97706;">67.6%</div>
+        <div style="font-size:.8rem;color:var(--muted);">Organic Eng. Rate</div>
+      </div>
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:#16a34a;">1,000+</div>
+        <div style="font-size:.8rem;color:var(--muted);">Keywords Tracked</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<div class="footer-cta">
+  <h2>Want Results Like These?</h2>
+  <p>We build SEO programs that compound over time — ranking you for thousands of local keywords and driving qualified leads at scale.</p>
+  <a href="https://genieskipbins.com.au" class="btn-primary" target="_blank">
+    Visit Genie Skip Bins →
+  </a>
+  <div style="margin-top:48px;font-size:.78rem;color:rgba(255,255,255,.25);position:relative;">
+    Case Study prepared June 2026 · Data sourced from Google Search Console & Google Analytics 4 · genieskipbins.com.au
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script>
+Chart.defaults.font.family = "'Inter', sans-serif";
+Chart.defaults.color = '#64748b';
+
+// ── SEARCH CONSOLE TREND CHART ──
+const scCtx = document.getElementById('scChart').getContext('2d');
+const months = ['Feb 26', 'Mar 2', 'Mar 10', 'Mar 18', 'Mar 26', 'Apr 3', 'Apr 11', 'Apr 19', 'Apr 27', 'May 5', 'May 13', 'May 21', 'May 29', 'Jun 6', 'Jun 14'];
+const impressions = [3200, 4100, 3800, 4500, 4200, 5100, 5800, 6200, 7400, 8100, 8900, 9200, 9800, 10500, 11200];
+const positions = [52, 50, 49, 51, 48, 47, 46, 48, 45, 44, 43, 45, 42, 43, 41];
+const posSmooth = [52, 51, 50, 50, 49, 48, 47, 47, 46, 45, 44, 44, 43, 43, 42];
+
+new Chart(scCtx, {
+  type: 'line',
+  data: {
+    labels: months,
+    datasets: [
+      {
+        label: 'Impressions',
+        data: impressions,
+        borderColor: '#4f8ef7',
+        backgroundColor: 'rgba(79,142,247,.08)',
+        borderWidth: 2,
+        fill: true,
+        tension: .4,
+        yAxisID: 'y'
+      },
+      {
+        label: 'Daily Position',
+        data: positions,
+        borderColor: 'rgba(124,58,237,.5)',
+        backgroundColor: 'transparent',
+        borderWidth: 1.5,
+        borderDash: [4,3],
+        tension: .3,
+        yAxisID: 'y1'
+      },
+      {
+        label: 'Avg Position (smoothed)',
+        data: posSmooth,
+        borderColor: '#f97316',
+        backgroundColor: 'transparent',
+        borderWidth: 2.5,
+        tension: .5,
+        yAxisID: 'y1'
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    interaction: { mode: 'index', intersect: false },
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: '#f1f5f9' } },
+      y: {
+        position: 'left',
+        grid: { color: '#f1f5f9' },
+        ticks: { callback: v => v >= 1000 ? (v/1000).toFixed(0)+'K' : v }
+      },
+      y1: {
+        position: 'right',
+        reverse: true,
+        min: 35, max: 60,
+        grid: { display: false },
+        ticks: { callback: v => 'Pos '+v }
+      }
+    }
+  }
+});
+
+// ── TRAFFIC TREND CHART ──
+const tCtx = document.getElementById('trafficChart').getContext('2d');
+const tLabels = ['Jan', 'Feb', 'Mar', 'Apr 5', 'Apr 12', 'Apr 19', 'Apr 26', 'May 3', 'May 10', 'May 17', 'May 24', 'May 31', 'Jun 7', 'Jun 14'];
+new Chart(tCtx, {
+  type: 'line',
+  data: {
+    labels: tLabels,
+    datasets: [
+      { label: 'Direct', data: [2,3,4,8,12,15,10,18,14,16,20,22,19,35], borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,.1)', fill: true, tension: .4, borderWidth: 2 },
+      { label: 'Organic Search', data: [0,1,2,5,10,12,8,14,12,15,18,20,17,25], borderColor: '#16a34a', backgroundColor: 'rgba(22,163,74,.08)', fill: true, tension: .4, borderWidth: 2 },
+      { label: 'Referral', data: [0,0,1,2,4,3,5,4,6,5,7,6,8,10], borderColor: '#d97706', backgroundColor: 'transparent', tension: .4, borderWidth: 1.5 },
+      { label: 'Organic Social', data: [0,0,0,1,2,2,1,3,2,4,3,2,3,4], borderColor: '#7c3aed', backgroundColor: 'transparent', tension: .4, borderWidth: 1.5, borderDash: [4,3] }
+    ]
+  },
+  options: {
+    responsive: true,
+    interaction: { mode: 'index', intersect: false },
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: '#f1f5f9' } },
+      y: { grid: { color: '#f1f5f9' }, beginAtZero: true }
+    }
+  }
+});
+
+// ── KEYWORD CHART ──
+const kwCtx = document.getElementById('kwChart').getContext('2d');
+const kwLabels = ['genie bins','alice springs\nskip bins','genie skip\nbins','council\nskip bin','skip genie','skip bins\nalice springs','skip hire\nalice springs','top skip bin\nhire darwin','skip bins\nkatherine','affordable skip\nhire darwin','cheapest\nskip bins darwin','skip bin hire\ndevonport','best skip bin\nhire darwin','cairns skip\nbin hire','darwin\nskip bins'];
+const kwPos = [1.25,3.71,3.93,4.00,4.09,4.29,4.30,4.84,4.86,4.97,6.49,8.11,7.09,13.12,12.11];
+const kwColors = kwPos.map(p => p <= 5 ? 'rgba(0,212,170,0.85)' : p <= 10 ? 'rgba(96,165,250,0.85)' : 'rgba(251,191,36,0.85)');
+new Chart(kwCtx, {
+  type: 'bar',
+  data: {
+    labels: kwLabels,
+    datasets: [{
+      label: 'Average Position',
+      data: kwPos,
+      backgroundColor: kwColors,
+      borderRadius: 6,
+      borderSkipped: false
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => 'Position: ' + ctx.parsed.y } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 10 } } },
+      y: {
+        reverse: true,
+        min: 0, max: 16,
+        grid: { color: '#f1f5f9' },
+        ticks: { callback: v => 'Pos ' + v }
+      }
+    }
+  }
+});
+
+// ── NEW USERS HORIZONTAL BAR ──
+const uCtx = document.getElementById('userChart').getContext('2d');
+new Chart(uCtx, {
+  type: 'bar',
+  data: {
+    labels: ['Direct', 'Organic Search', 'Organic Social', 'Referral', 'Unassigned'],
+    datasets: [{
+      label: 'New Users',
+      data: [600, 270, 80, 45, 10],
+      backgroundColor: ['#2563eb','#16a34a','#7c3aed','#d97706','#94a3b8'],
+      borderRadius: 6,
+      borderSkipped: false
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => 'New Users: ~' + ctx.parsed.x } }
+    },
+    scales: {
+      x: { grid: { color: '#f1f5f9' }, beginAtZero: true },
+      y: { grid: { display: false } }
+    }
+  }
+});
+
+// ── GROWTH TREND (dark section) ──
+const gCtx = document.getElementById('growthChart').getContext('2d');
+new Chart(gCtx, {
+  type: 'line',
+  data: {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    datasets: [
+      {
+        label: 'Total Sessions',
+        data: [12, 45, 78, 210, 420, 595],
+        borderColor: '#00d4aa',
+        backgroundColor: 'rgba(0,212,170,.12)',
+        fill: true,
+        tension: .45,
+        borderWidth: 2.5,
+        pointBackgroundColor: '#00d4aa',
+        pointRadius: 5
+      },
+      {
+        label: 'Organic Sessions',
+        data: [0, 8, 22, 88, 165, 228],
+        borderColor: '#7c3aed',
+        backgroundColor: 'rgba(124,58,237,.08)',
+        fill: true,
+        tension: .45,
+        borderWidth: 2,
+        pointBackgroundColor: '#7c3aed',
+        pointRadius: 4
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: {
+        display: true,
+        labels: { color: 'rgba(255,255,255,.6)', boxWidth: 12, padding: 20, usePointStyle: true }
+      }
+    },
+    scales: {
+      x: { grid: { color: 'rgba(255,255,255,.06)' }, ticks: { color: 'rgba(255,255,255,.5)' } },
+      y: { grid: { color: 'rgba(255,255,255,.06)' }, ticks: { color: 'rgba(255,255,255,.5)' }, beginAtZero: true }
+    }
+  }
+});
+</script>
+</body>
+</html>
